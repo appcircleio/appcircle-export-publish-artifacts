@@ -24,6 +24,23 @@ end
     
 $stdout.sync = true
 
+  
+if !ENV['STEP_OUTPUT_VARIABLE'].to_s.empty?
+  
+  output_file = ENV["AC_UPLOAD_DIR"] + '/AC_OUTPUT.env'
+
+  File.open(output_file, 'w') do |file|
+    ENV['STEP_OUTPUT_VARIABLE'].split(',').each do |var_key|
+      var_value = ENV[var_key] || ''
+      file.puts "#{var_key}=#{var_value}"
+    end
+  end
+
+  puts "Environment variables exported to #{output_file}"
+else
+  puts "STEP_OUTPUT_VARIABLE is null or empty. Env variables will not be exposed to next steps."
+end
+
 puts "starting to upload files..."
 
 puts ENV["AC_UPLOADCHUNK_URL"]

@@ -17,6 +17,12 @@ inputs:
   title: Delete artifacts for failed workflows
   description: "Delete build artifacts if any of your workflows failed. Only build logs will be uploaded."
   helpText:
+- key: "STEP_OUTPUT_VARIABLE"
+  defaultValue: "$STEP_OUTPUT_VARIABLE"
+  isRequired: false
+  title: Comma seperated output values steps which will be exported
+  description: ""
+  helpText:
 outputs:
 processFilename: ruby
 processArguments: '%AC_STEP_TEMP%/main.rb'
