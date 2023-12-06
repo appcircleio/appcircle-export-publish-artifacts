@@ -36,7 +36,7 @@ if !ENV['STEP_OUTPUT_VARIABLE'].to_s.empty?
     end
   end
 
-  puts "Environment variables exported to #{output_file}"
+  puts "Environment variables exported to #{output_file} with keys:" + ENV['STEP_OUTPUT_VARIABLE']
 else
   puts "STEP_OUTPUT_VARIABLE is null or empty. Env variables will not be exposed to next steps."
 end
