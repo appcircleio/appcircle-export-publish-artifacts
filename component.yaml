@@ -1,4 +1,5 @@
 platform: Common
+purpose: Publish
 buildPlatform:
 displayName: "Export Publish Artifacts"
 description: "Exports the specified publish artifacts from the runner to the Appcircle dashboard. The exported files will be sent to publish module to continue next step."
